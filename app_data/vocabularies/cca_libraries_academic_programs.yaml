@@ -1,0 +1,20 @@
+- id: 1
+  name: ANIMA
+  title:
+    en: Animation Program
+- id: 2
+  name: BARCH
+  title:
+    en: Architecture (B.A.) Program
+- id: 3
+  name: CERAM
+  title:
+    en: Ceramics Program
+- id: 4
+  name: COMAR
+  title:
+    en: Community Arts Program
+- id: 4
+  name: FYCST
+  title:
+    en: First Year Program

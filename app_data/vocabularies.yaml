@@ -13,3 +13,6 @@ subjects:
 #       name: Research Organization Registry
 #       uri: "https://ror.org/"
 #       data-file: vocabularies/affiliations_ror.yaml
+cca_libraries_academic_programs:
+  pid-type: sub
+  data-file: vocabularies/cca_libraries_academic_programs.yaml
