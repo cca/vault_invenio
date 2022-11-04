@@ -86,6 +86,9 @@ I tried to follow the custom fields documentation closely to create a couple, bu
 
 The VocabularyCF for CCA academic programs technically built but then when I go to actually add one to an upload, there's an AJAX error during the autocomplete. I'm not sure what could be the matter (something's not indexed, my vocabulary YAML is not formatted correctly) nor how to easily rebuild just the vocabulary & not the whole app.
 
+Removing unneeded fields from the app sounds like it is not a straightforward process:
+https://discord.com/channels/692989811736182844/724974365451747329/1038081675474780280
+
 ## 10.0.0 upgrade
 
 Edited Pipfile to reference Invenion 10.0.0
