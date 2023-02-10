@@ -1,4 +1,20 @@
-# Notes on running Invenio RDM
+# Notes on InvenioRDM
+
+Goals:
+
+- [x] basic custom templates
+https://inveniordm.docs.cern.ch/customize/look-and-feel/templates/
+https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm
+- [ ] convert to local services, containerized development is too slow
+- [ ] remove fields from upload form (e.g. funders)
+https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/assets/semantic-ui/js/invenio_app_rdm/deposit/RDMDepositForm.js
+- [ ] add unique subjects vocabulary with autocomplete
+- [ ] add custom field (CCA Academic Programs?)
+- [ ] static page, custom view
+https://inveniordm.docs.cern.ch/customize/static_pages/
+https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
+
+## Running InvenioRDM
 
 To start:
 
