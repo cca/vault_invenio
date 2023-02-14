@@ -5,7 +5,7 @@ Goals:
 - [x] basic custom templates
 https://inveniordm.docs.cern.ch/customize/look-and-feel/templates/
 https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm
-- [ ] convert to local services, containerized development is too slow
+- [x] convert to local services, containerized development is too slow
 - [ ] remove fields from upload form (e.g. funders)
 https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/assets/semantic-ui/js/invenio_app_rdm/deposit/RDMDepositForm.js
 - [ ] add unique subjects vocabulary with autocomplete
@@ -19,20 +19,20 @@ https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
 To start:
 
 - open Docker Desktop
-- run `invenio-cli containers start`
-
-https://github.com/inveniosoftware/training
+- run `invenio-cli services start` to start the db, search, task queue, & redis cache
+- run `invenio-cli run` to run the app (may want to put this in the background)
 
 RabbitMQ admin interface: http://localhost:15672 credentials "guest/guest"
 Elasticsearch: http://localhost:9200/rdmrecords/ transitioning from ES to Open Search
 pgAdmin (db): http://127.0.0.1:5050/login credentials "phette23@gmail.com/cca-vault" or look in docker-services.yml
+I disabled the OpenSearch Dashboard in the docker-services.yml file but it could be added here as well
 May need to set the postgres host to "host.docker.internal" e.g. in docker/pgadmin/servers.json
-API end points: https://127.0.0.1/api/records | https://127.0.0.1/api/users
+API end points: https://127.0.0.1:5000/api/records | https://127.0.0.1:5000/api/users
 
-Some documentation shows port 5000 on API requests; ignore this, it's for running services locally, not using containers.
+Note that, if you're running the app locally the main URLs (for website and REST API) are on localhost:5000 while if you run the app on a container then you do not need the port and the website, background worker, and API are all on different containers each with a copy of the application code (but no static files for the worker & API).
 
 Example sites: https://data.caltech.edu/ | https://invenio.itam.cas.cz/
-https://github.com/caltechlibrary/caltechdata/tree/main
+https://github.com/caltechlibrary/caltechdata
 
 Decent docs https://inveniordm.docs.cern.ch/ the reference https://inveniordm.docs.cern.ch/reference/ and customize https://inveniordm.docs.cern.ch/customize/ sections are the most useful.
 
@@ -73,7 +73,9 @@ Can't create records with the API because requests are rejected for not having a
 
 After adding a logo image and editing invenio.cfg, the new image wasn't copied to the nginx frontend server after a `invenio-cli containers rebuild`.
 
-There was an npm error when running `invenio-cli assets build`, I fixed it by downgrading npm to v6.
+There was an npm error when running `invenio-cli assets build`, I fixed it by _downgrading_ npm to v6. `invenio-cli check-requirements --development` complains if you have npm > 7.
+
+The instructions for setting up with services do not work because the CLI never recognizes that the opensearch container has started. But if you run `invencio-cli services start` first, wait for it to end even if it says search never came online, check the search container and URL (port 9200), then you can run `invenio-cli services setup` to initialize everything and load the demo data.
 
 ## Customization
 
