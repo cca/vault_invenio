@@ -6,13 +6,16 @@ Goals:
 https://inveniordm.docs.cern.ch/customize/look-and-feel/templates/
 https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm
 - [x] convert to local services, containerized development is too slow
-- [ ] remove fields from upload form (e.g. funders)
-https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/assets/semantic-ui/js/invenio_app_rdm/deposit/RDMDepositForm.js
+- [x] remove fields from upload form (e.g. funders)
 - [ ] add unique subjects vocabulary with autocomplete
 - [ ] add custom field (CCA Academic Programs?)
 - [ ] static page, custom view
 https://inveniordm.docs.cern.ch/customize/static_pages/
 https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
+- [ ] custom resource types
+https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
+- [ ] add (and make default?) a Copyright license field
+- [ ] make records restricted by default (override `InvenioAppRdm.Deposit.AccessRightField.layout`?)
 
 ## Running InvenioRDM
 
@@ -33,6 +36,8 @@ Note that, if you're running the app locally the main URLs (for website and REST
 
 Example sites: https://data.caltech.edu/ | https://invenio.itam.cas.cz/
 https://github.com/caltechlibrary/caltechdata
+Zenodo: https://github.com/zenodo/zenodo-rdm | https://zenodo.org/
+CERN Document Server: https://github.com/CERNDocumentServer/cds-rdm might have some useful bits under site (e.g. see cli command to delete a record)
 
 Decent docs https://inveniordm.docs.cern.ch/ the reference https://inveniordm.docs.cern.ch/reference/ and customize https://inveniordm.docs.cern.ch/customize/ sections are the most useful.
 
@@ -90,6 +95,22 @@ SSO is supported but isn't well tested https://inveniordm.docs.cern.ch/customize
 
 **static pages** (added in v11) will be useful
 https://inveniordm.docs.cern.ch/customize/static_pages/
+
+### Remove fields from upload form
+
+https://inveniordm.docs.cern.ch/develop/howtos/override_components/
+
+- find the field's `Overridable` component on the deposit form https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/assets/semantic-ui/js/invenio_app_rdm/deposit/RDMDepositForm.js
+- copy the `id` attribute
+- in assets/js/invenio_app_rdm/overridableRegistry/mapping.js add a line to the `overriddenComponents` hash:
+
+```js
+export const overriddenComponents = {
+    "InvenioAppRdm.Deposit.FundingField.layout": () => null,
+}
+```
+
+@TODO for fields like Funding where we remove the child field, its parent AccordionField remains but is empty, we need a way to remove that as well.
 
 ### Custom Fields
 
