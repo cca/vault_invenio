@@ -1,3 +1,6 @@
+licenses:
+  pid-type: lic
+  data-file: vocabularies/licenses.csv
 subjects:
   pid-type: sub
   schemes:

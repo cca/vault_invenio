@@ -21,5 +21,4 @@ export const overriddenComponents = {
 
 // @TODO Funders, Alternate Identifiers, and Related Works all have empty
 // AccordionField headers after we have removed the child overridable components
-// It would also be nice to override some of these fields for certain record types
-// or within certain communities (e.g. Libraries could show all of them)
+// This PR fixes: https://github.com/inveniosoftware/invenio-app-rdm/pull/2087

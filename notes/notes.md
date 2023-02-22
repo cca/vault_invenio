@@ -7,14 +7,14 @@ https://inveniordm.docs.cern.ch/customize/look-and-feel/templates/
 https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm
 - [x] convert to local services, containerized development is too slow
 - [x] remove fields from upload form (e.g. funders)
-- [ ] add unique subjects vocabulary with autocomplete
 - [ ] add custom field (CCA Academic Programs?)
 - [ ] static page, custom view
 https://inveniordm.docs.cern.ch/customize/static_pages/
 https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
 - [ ] custom resource types
+https://inveniordm.docs.cern.ch/customize/vocabularies/resource_types/
 https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
-- [ ] add (and make default?) a Copyright license field
+- [x] add (and make default?) a Copyright license field
 - [ ] make records restricted by default (override `InvenioAppRdm.Deposit.AccessRightField.layout`?)
 
 ## Running InvenioRDM
@@ -93,6 +93,8 @@ Create a template in the same path as existing one e.g. /templates/semantic-ui/i
 SSO: https://inveniordm.docs.cern.ch/customize/authentication/
 SSO is supported but isn't well tested https://inveniordm.docs.cern.ch/customize/authentication/#saml-integration the CERN instances use ORCID & GitHub for authentication
 
+Develop own module: https://invenio.readthedocs.io/en/maint-3.0/tutorial-module/index.html
+
 **static pages** (added in v11) will be useful
 https://inveniordm.docs.cern.ch/customize/static_pages/
 
@@ -110,7 +112,7 @@ export const overriddenComponents = {
 }
 ```
 
-@TODO for fields like Funding where we remove the child field, its parent AccordionField remains but is empty, we need a way to remove that as well.
+Waiting on [a PR](https://github.com/inveniosoftware/invenio-app-rdm/pull/2087) to make it so you can remove the parent AccordionField as well.
 
 ### Custom Fields
 
