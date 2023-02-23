@@ -8,14 +8,14 @@ https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/t
 - [x] convert to local services, containerized development is too slow
 - [x] remove fields from upload form (e.g. funders)
 - [ ] add custom field (CCA Academic Programs?)
-- [ ] static page, custom view
+- [ ] add a static page (tried, did not work)
 https://inveniordm.docs.cern.ch/customize/static_pages/
+- [x]  add a custom view
 https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
 - [ ] custom resource types
 https://inveniordm.docs.cern.ch/customize/vocabularies/resource_types/
 https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
 - [x] add (and make default?) a Copyright license field
-- [ ] make records restricted by default (override `InvenioAppRdm.Deposit.AccessRightField.layout`?)
 
 ## Running InvenioRDM
 

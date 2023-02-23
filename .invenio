@@ -16,6 +16,7 @@ database = postgresql
 search = opensearch2
 file_storage = local
 development_tools = yes
+site_code = yes
 _template = https://github.com/inveniosoftware/cookiecutter-invenio-rdm.git
 
 [files]

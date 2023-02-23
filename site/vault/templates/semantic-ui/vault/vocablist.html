@@ -1,0 +1,19 @@
+{%- extends "invenio_theme/page.html" %}
+
+<main id="main">
+{% block page_body %}
+    <div id="vocablist-page" class="ui container mt-25 mb-15">
+        <h1 class="ui header">Vocabularies</h1>
+        {% block root_section %}
+            <div id="root-container" class="panel-body">
+                <ul>
+                    {% for vocab in vocabs %}
+                        <li><a href="/api/vocabularies/{{vocab.id}}">{{ vocab }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p>The API links will break for many of these because they are "specific" vocabularies with their own API routes e.g. "names" should point to <code><a href="/api/names">/api/names</a></code> instead of <code>/api/vocabularies/names</code>.</p>
+        {% endblock %}
+    </div>
+{% endblock %}
+</main>

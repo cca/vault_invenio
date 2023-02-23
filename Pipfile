@@ -12,6 +12,7 @@ uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
 invenio-cli = "*"
 invenio-app-rdm = {version = "~=11.0.0", extras = ["opensearch2", "postgresql"]}
+vault = {editable="True", path="./site"}
 
 [requires]
 python_version = "3.9"
