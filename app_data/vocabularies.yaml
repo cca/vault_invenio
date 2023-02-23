@@ -22,3 +22,6 @@ subjects:
 #       name: Research Organization Registry
 #       uri: "https://ror.org/"
 #       data-file: vocabularies/affiliations_ror.yaml
+programs:
+  pid-type: sub
+  data-file: vocabularies/programs.yaml
