@@ -7,7 +7,7 @@ https://inveniordm.docs.cern.ch/customize/look-and-feel/templates/
 https://github.com/inveniosoftware/invenio-app-rdm/tree/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm
 - [x] convert to local services, containerized development is too slow
 - [x] remove fields from upload form (e.g. funders)
-- [ ] add custom field (CCA Academic Programs?)
+- [x] add custom field (CCA Academic Programs?)
 - [ ] add a static page (tried, did not work)
 https://inveniordm.docs.cern.ch/customize/static_pages/
 - [x]  add a custom view
@@ -116,12 +116,13 @@ Waiting on [a PR](https://github.com/inveniosoftware/invenio-app-rdm/pull/2087) 
 
 ### Custom Fields
 
-I tried to follow the custom fields documentation closely to create a couple, but the TextCF one for a rich text artists' statement didn't work, it threw an error related to receiving multiple `field_cls` parameters.
+Simplest: https://inveniordm.docs.cern.ch/customize/custom_fields/records/
+Reference: https://inveniordm.docs.cern.ch/reference/widgets/#autocompletedropdown
+Build your own: https://inveniordm.docs.cern.ch/develop/howtos/custom_fields/
 
-The VocabularyCF for CCA academic programs technically built but then when I go to actually add one to an upload, there's an AJAX error during the autocomplete. I'm not sure what could be the matter (something's not indexed, my vocabulary YAML is not formatted correctly) nor how to easily rebuild just that vocabulary & not the whole app.
+Managed to build a custom "Academic Programs" field in around an hour that uses a vocabulary, autocompletes on the form, and has a custom display template linking to search results sharing the same value (similar to how we do it in VAULT). The only thing that did not work is that the search facet does not appear, but the indexing clearly works because the hyperlinked search returns results.
 
-Removing unneeded fields from the app sounds like it is not a straightforward process:
-https://discord.com/channels/692989811736182844/724974365451747329/1038081675474780280
+One other disappointment is that, though I defined a bunch of properties in for each term in the related programs vocab, it only records the `id` and `title` in the record.
 
 ## Roadmap
 
