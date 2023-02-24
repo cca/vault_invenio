@@ -16,6 +16,7 @@ https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
 https://inveniordm.docs.cern.ch/customize/vocabularies/resource_types/
 https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
 - [x] add (and make default?) a Copyright license field
+- [x] test the file integrity check report
 
 ## Running InvenioRDM
 
@@ -135,6 +136,46 @@ Notable in the roadmap: https://inveniosoftware.org/products/rdm/roadmap/
 Without those two features Invenio lags behind a it, or will be more work to customize.
 
 This is a more detailed roadmap with an issue for each feature: https://github.com/inveniosoftware/product-rdm/issues
+
+### Digital Preservation
+
+OCFL is being worked on but right now there is only a tool to export Invenio files to OCFL, they are not stored in that layout. Still, their layout is _similar_ — files are stored in venv root > /var/instance/data > then a tree like this:
+├── 1b
+│   └── 3c
+│       └── 2deb-40cd-46ed-9097-0b44fc0aa2ef
+│           └── data
+
+#### File Integrity Check
+
+The v11 file integrity check report is wonderful, something obviously missing from EQUELLA. It took me some time to figure out what the `CELERY_BEAT_SCHEDULE` settings had to look like (see celery_beat.py in this dir):
+
+```python
+from datetime import datetime
+from invenio_app_rdm.config import CELERY_BEAT_SCHEDULE
+CELERY_BEAT_SCHEDULE = {
+    **CELERY_BEAT_SCHEDULE,
+    'file-checks': {
+        'task': 'invenio_files_rest.tasks.schedule_checksum_verification',
+        'schedule': datetime.timedelta(seconds=60),
+        'kwargs': {
+            'batch_interval': {
+                'hours': 1
+            },
+            'frequency': {
+                'days': 14
+            },
+            'max_count': 0,
+            'files_query': 'invenio_app_rdm.utils.files.checksum_verification_files_query'
+        }
+    },
+    'file-integrity-report': {
+        'task': 'invenio_app_rdm.tasks.file_integrity_report',
+        'schedule': datetime.timedelta(seconds=120)
+    }
+}
+```
+
+This sets the check to run every minute and the report to mail every other minute, if you then enter into the instance data dir and mess with one of the files (e.g. `echo 'blah' >> 1b/3c/2deb-40cd-46ed-9097-0b44fc0aa2ef/data`) it'll trigger the check and print an email to your console.
 
 ## 10.0.0 upgrade
 
