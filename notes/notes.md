@@ -17,6 +17,8 @@ https://inveniordm.docs.cern.ch/customize/vocabularies/resource_types/
 https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
 - [x] add (and make default?) a Copyright license field
 - [x] test the file integrity check report
+- [ ] permissions & groups: how granular? can we create groups that see certain items?
+- [ ] SSO
 
 ## Running InvenioRDM
 
