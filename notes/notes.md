@@ -37,6 +37,13 @@ API end points: https://127.0.0.1:5000/api/records | https://127.0.0.1:5000/api/
 
 Note that, if you're running the app locally the main URLs (for website and REST API) are on localhost:5000 while if you run the app on a container then you do not need the port and the website, background worker, and API are all on different containers each with a copy of the application code (but no static files for the worker & API).
 
+## Example Sites
+
+TU Wien https://researchdata.tuwien.ac.at/
+https://gitlab.tuwien.ac.at/fairdata/invenio-theme-tuw
+TU Graz https://repository.tugraz.at/
+https://github.com/tu-graz-library/invenio-theme-tugraz
+
 Example sites: https://data.caltech.edu/ | https://invenio.itam.cas.cz/
 https://github.com/caltechlibrary/caltechdata
 Zenodo: https://github.com/zenodo/zenodo-rdm | https://zenodo.org/
