@@ -15,10 +15,20 @@ https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
 - [ ] custom resource types
 https://inveniordm.docs.cern.ch/customize/vocabularies/resource_types/
 https://discord.com/channels/692989811736182844/724974365451747329/1065248477505929246
+- [ ] conditional fields based on resource type
+https://discord.com/channels/692989811736182844/704625518552547329/1091254152182640660
 - [x] add (and make default?) a Copyright license field
 - [x] test the file integrity check report
 - [ ] permissions & groups: how granular? can we create groups that see certain items?
-- [ ] SSO
+permissions available to react form components:
+https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/requests_ui/views/requests.py#L62
+- [ ] **SSO**
+- [ ] test CalTech "change_owner" script
+https://github.com/caltechlibrary/caltechdata/tree/main/scripts
+"requires invenio_utilities_tuw" so will have to add that to Pipfile (but it's not listed in CalTech's Pipfile?)
+https://gitlab.tuwien.ac.at/fairdata/invenio-utilities-tuw amazingly this isn't on GitHub
+- [ ] admin panel
+https://inveniordm.docs.cern.ch/develop/topics/administration_panel/
 
 ## Running InvenioRDM
 
@@ -139,7 +149,7 @@ One other disappointment is that, though I defined a bunch of properties in for 
 Notable in the roadmap: https://inveniosoftware.org/products/rdm/roadmap/
 
 - Custom fields will be important for us (**released in 10.0 this October**)
-- Metadata "Back office" / admin will also, I assume that's a Manage Resources equivalent
+- Metadata "Back office" / admin will also, I assume that's a Manage Resources equivalent. Did this disappear off of the roadmap? Says "completed by CERN in Sept 2023"
 - OCFL: not hugely important for us but most serious repositories are standardizing around OCFL so this could be important for migration later
 
 Without those two features Invenio lags behind a it, or will be more work to customize.
