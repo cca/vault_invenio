@@ -1,32 +1,32 @@
-- id: 1
+- id: ANIMA
   scheme: cca_libraries_academic_programs
   props:
     code: ANIMA
   title:
     en: Animation Program
   subject: Animation Program
-- id: 2
+- id: BARCH
   scheme: cca_libraries_academic_programs
   props:
     code: BARCH
   title:
     en: Architecture (B.A.) Program
   subject: Architecture (B.A.) Program
-- id: 3
+- id: CERAM
   scheme: cca_libraries_academic_programs
   props:
     code: CERAM
   title:
     en: Ceramics Program
   subject: Ceramics Program
-- id: 4
+- id: COMAR
   scheme: cca_libraries_academic_programs
   props:
     code: COMAR
   title:
     en: Community Arts Program
   subject: Community Arts Program
-- id: 5
+- id: FYCST
   scheme: cca_libraries_academic_programs
   props:
     code: FYCST
