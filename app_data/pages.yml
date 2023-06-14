@@ -1,0 +1,4 @@
+- url: /library/hours
+  title: Library
+  description: CCA Libraries hours of operation
+  template: hours.html

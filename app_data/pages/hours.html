@@ -1,0 +1,67 @@
+{%- extends "invenio_theme/frontpage.html" %}
+
+{%- block page_header %}
+  {%- include "invenio_app_rdm/header_frontpage.html" %}
+{%- endblock page_header %}
+
+{%- block page_body %}
+
+  {%- block grid_section %}
+    <div class="ui stackable grid container rel-mt-2">
+
+      {% block main_column %}
+        <div class="eleven wide computer sixteen wide tablet column">
+            <h2 class="libraryname">Simpson Library</h2>
+            <ul class="Simpson-hrs">Loading hours data...</ul>
+        </div>
+      {% endblock main_column %}
+
+      {% block side_column %}
+        <aside class="five wide computer sixteen wide tablet column">
+
+          {% block side_column_content %}
+          <h2 class="libraryname">Materials Library</h2>
+          <ul class="Materials-hrs"><li>Loading hours data...</li></ul>
+          {% endblock side_column_content %}
+
+        </aside>
+      {% endblock side_column %}
+    </div>
+  {%- endblock grid_section %}
+
+  {%- block bottom_section %}
+  {%- endblock bottom_section %}
+
+{%- endblock page_body %}
+<script>
+const today = Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(new Date())
+const week = [['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'], ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday']]
+const format = (day, hrs) => {
+    // highlight current weekday in bold
+    if (day === today) {
+        return `<li><b>${day} ${hrs}</b>`
+    }
+    return `<li>${day} ${hrs}`
+}
+const gethrs = (library) => {
+    fetch(`https://libraries.cca.edu/hours/?format=json&library=${library}`)
+        .then(r => r.json())
+        .then(data => {
+            let list = document.querySelector(`.${library}-hrs`)
+
+            if (!data.error) {
+                // empty out current hrs list
+                let html = ''
+                for (let day of week) {
+                    html += format(day[1], data['hours'][day[0]])
+                }
+                list.innerHTML = html
+            } else {
+                list.outerHTML = `<p class="${library}-hrs">This library is currently closed.</p>`
+            }
+        })
+        .catch(err => console.error(err))
+}
+
+['Simpson', 'Materials'].forEach(gethrs)
+</script>
