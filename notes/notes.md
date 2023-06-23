@@ -15,23 +15,15 @@
 
 https://inveniordm.docs.cern.ch/
 
-The most important documentation is spread across the [Customize](https://inveniordm.docs.cern.ch/customize/) and [Reference](https://inveniordm.docs.cern.ch/reference/) sections. The [Develop](https://inveniordm.docs.cern.ch/develop/) section is less useful in general (unless we decide to write custom modules or contribute to the main project) but establishes some fundamental concepts and nuances, like how records and communities function.
+The most important sections of the documentation are **[Customize](https://inveniordm.docs.cern.ch/customize/)** and **[Reference](https://inveniordm.docs.cern.ch/reference/)**. **[Develop](https://inveniordm.docs.cern.ch/develop/)** is less useful in general (unless we decide to write custom modules or contribute to the main project) but establishes some fundamental concepts and nuances, like how records and communities function.
 
-The documentation for some concepts will be spread across multiple sections. For instance, Custom Fields has [a quickstart guide](https://inveniordm.docs.cern.ch/customize/metadata/custom_fields/records/) under Customize, lists of potential field and [UI widgets](https://inveniordm.docs.cern.ch/reference/custom_fields/widgets/) under Reference, and a [how-to guide](https://inveniordm.docs.cern.ch/develop/howtos/custom_fields/) under Develop that goes deeper to cover creating a custom UI widget.
-
-## @TODO: move these notes to the right files
-
-Admin user (admin@inveniosoftware.org) should have password `password` based on `RDM_RECORDS_USER_FIXTURE_PASSWORDS` in invenio.cfg. If not, reset it as described here: https://inveniordm.docs.cern.ch/customize/vocabularies/users/
-
-Can't create a user because it requires email activation but no emails are sent. The `invenio users` command doesn't seem to offer a way around this. Disable email activation in invenio.cfg with `SECURITY_CONFIRMABLE = False` and `SECURITY_LOGIN_WITHOUT_CONFIRMATION = True`. As of v11 there is a `--confirm` flag so you can `invenio users create -c` to automatically confirm the created user.
-
-There was an npm error when running `invenio-cli assets build`, I fixed it by _downgrading_ npm to v6. `invenio-cli check-requirements --development` complains if you have npm > 7.
+The documentation for some concepts is spread across multiple sections. For instance, Custom Fields has [a quickstart guide](https://inveniordm.docs.cern.ch/customize/metadata/custom_fields/records/) under Customize, lists of potential field and [UI widgets](https://inveniordm.docs.cern.ch/reference/custom_fields/widgets/) under Reference, and a [how-to guide](https://inveniordm.docs.cern.ch/develop/howtos/custom_fields/) under Develop that goes deeper to cover creating a custom UI widget.
 
 ## Roadmap
 
-Notable in the roadmap: https://inveniosoftware.org/products/rdm/roadmap/
+High-level roadmap: https://inveniosoftware.org/products/rdm/roadmap/
 
-This is a more detailed roadmap with an issue for each feature: https://github.com/inveniosoftware/product-rdm/issues
+More detailed roadmap with an issue for each feature: https://github.com/inveniosoftware/product-rdm/issues
 
 ### Digital Preservation
 

@@ -1,8 +1,10 @@
 # VAULT InvenioRDM
 
-Welcome to your InvenioRDM instance.
+CCA InvenioRDM instance. This is mostly a cookiecutter Invenio project with additional documentation for us.
 
 ## Setup
+
+Requires Docker, python 3.9, pipenv, node, and npm 6 (@TODO is this still a limitation?).
 
 ```sh
 git clone https://github.com/cca/vault_invenio

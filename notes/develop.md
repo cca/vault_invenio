@@ -23,7 +23,9 @@ Invenio initializes fixtures (basically, the static app_data files) asynchronous
 
 See also: **Setup Troubles** in [run.md](run.md) if the app doesn't work at first.
 
-Once running, visit https://127.0.0.1:5000 in your browser. **Note**: The server is using a self-signed SSL certificate, so your browser will issue a warning that you will have to by-pass.
+Once running, visit https://127.0.0.1:5000 in a web browser. **Note**: The server is using a self-signed SSL certificate, so your browser will issue a warning that you will have to by-pass.
+
+The super admin is admin@inveniosoftware.org with password `password`, based on `RDM_RECORDS_USER_FIXTURE_PASSWORDS` in invenio.cfg. If not, [reset the password](https://inveniordm.docs.cern.ch/customize/vocabularies/users/#change-password).
 
 ## Theme & Templates
 
