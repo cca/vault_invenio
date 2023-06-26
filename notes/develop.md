@@ -19,13 +19,11 @@ invenio-cli run
 
 The build process is slow the first time as docker images have to be downloaded during the process.
 
-Invenio initializes fixtures (basically, the static app_data files) asynchronously by sending them to its task queue. So the initial startup, even after services are running, is further delayed as these tasks finish.
-
-See also: **Setup Troubles** in [run.md](run.md) if the app doesn't work at first.
+Invenio initializes fixtures (basically, the static app_data files) asynchronously by sending them to its task queue. So the initial startup, even after services are running, is further delayed as these tasks finish. View the task queue in the RabbitMQ dashboard and the size of the search indicies to get a sense of how much processing is left. See the **Services** table in [run.md](run.md). The **Setup Troubles**  section may also be useful.
 
 Once running, visit https://127.0.0.1:5000 in a web browser. **Note**: The server is using a self-signed SSL certificate, so your browser will issue a warning that you will have to by-pass.
 
-The super admin is admin@inveniosoftware.org with password `password`, based on `RDM_RECORDS_USER_FIXTURE_PASSWORDS` in invenio.cfg. If not, [reset the password](https://inveniordm.docs.cern.ch/customize/vocabularies/users/#change-password).
+The super admin is admin@inveniosoftware.org with password `password`, based on `RDM_RECORDS_USER_FIXTURE_PASSWORDS` in invenio.cfg. If not, [reset the password](https://inveniordm.docs.cern.ch/customize/vocabularies/users/#change-password). You may need to `invenio users activate admin@inveniosoftware.org` the account before it can authenticate.
 
 ## Theme & Templates
 

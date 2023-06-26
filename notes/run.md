@@ -28,27 +28,33 @@ The instructions on ES docker configuration are outdated, link to this ES which 
 
 ## Setup Troubles
 
-Setup failed with an error but the containers did come up. Trying to do basic things (login, access records via API) fails with database errors, it looks like nothing was initialized. Interestingly, the website still displays (it's not fully reliant on the database), but trying to _do_ almost anything leads to an error.
+The API uses the search indices. If you go to visit every page (e.g. search, dashboard, etc.) but see errors and 500 HTTP responses from the API, then the search indices probably have not been created. `invenio index init` lets you visit various pages, but there will be no contents, because the indices are empty.
 
-Eventually I figured out how to enter one of the  containers (I think either invenio-web-api or invenio-worker are OK) which have the app's python environment and `invenio` CLI available to initialize everything that wasn't built. You can sort of see what the cli should have done in the `_setup()` function here https://github.com/inveniosoftware/invenio-cli/blob/master/invenio_cli/commands/containers.py#L93
-
-`invenio-cli containers setup` should do below...
+If the `invenio-cli services setup` command fails, we can sort of see what the cli should have done in the `_setup()` function: https://github.com/inveniosoftware/invenio-cli/blob/master/invenio_cli/commands/containers.py#:~:text=def%20_setup
 
 ```sh
-docker exec -it $ID /bin/bash
 invenio db init create
+# on a local instance the INVENIO_INSTANCE_PATH is the venv + var/instance/data so
+# (pipenv --venv)/var/instance/data
 invenio files location create --default default-location ${INVENIO_INSTANCE_PATH}/data
+# @TODO are these needed here? I think rdm-records fixtures creates them
 invenio roles create admin
 invenio access allow superuser-access role admin
 invenio index init
-# if you try to upload it still won't work until you do this
-invenio rdm-records fixtures
-# submits a background task to create some demo records?
-invenio rdm-records demo
-# may be necessary after the two commands above
-invenio rdm-records rebuild-index
 # initialize custom fields
 invenio rdm-records custom-fields init
+# custom fields on communities
+invenio communities custom-fields init
+# app is semi-usable without errors now but uploads still won't work
+# until you load fixtures because they contains all the vocabs (resource types, subjects, etc.)
+invenio rdm fixtures
+# app is usable but has no content
+# this submits a background task to create demo records, will take time
+invenio rdm-records demo
+# may be necessary after the two commands above?
+invenio rdm-records rebuild-index
+# Invenio v12 also adds this step
+invenio queues declare
 ```
 
 The instructions for setting up with services do not work because the CLI never recognizes that the opensearch container has started. But if you run `invencio-cli services start` first, wait for it to end even if it says search never came online, check the search container and URL (port 9200), then you can run `invenio-cli services setup` to initialize everything and load the demo data.
