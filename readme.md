@@ -4,7 +4,7 @@ CCA InvenioRDM instance. This is mostly a cookiecutter Invenio project with addi
 
 ## Setup
 
-Requires Docker, python 3.9, pipenv, node, and npm 6 (@TODO is this still a limitation?).
+Requires Docker, python 3.9, pipenv, node, and npm 7. `invenio-cli check-requirements --development` will check if you have all these.
 
 ```sh
 git clone https://github.com/cca/vault_invenio
