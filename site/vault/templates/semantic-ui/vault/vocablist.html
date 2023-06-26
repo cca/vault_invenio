@@ -17,3 +17,8 @@
     </div>
 {% endblock %}
 </main>
+
+{% block javascript %}
+    {{ super() }}
+    {{ webpack['site-js-test.js'] }}
+{% endblock %}

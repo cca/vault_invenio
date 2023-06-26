@@ -46,3 +46,27 @@ export const overriddenComponents = {
 ```
 
 If all of the children of a section with an accordion header are removed, the accordion remains but is empty. Awkward.Waiting on [a PR](https://github.com/inveniosoftware/invenio-app-rdm/pull/2087) (merged, but not in v11) to make it so we can remove the parent AccordionField as well.
+
+## Custom code & views
+
+https://inveniordm.docs.cern.ch/develop/howtos/custom_code/
+
+There is a custom view at `/vocablist` which lists all vocabs and links to their API routes.
+
+### Custom JavaScript
+
+To add custom JS to a template, you'll need to override the template, add a webpack entrypoint, and reference the script in the template. At a high level:
+
+- create the script in site/vault/assets/semanti-ui/js/vault
+- add its entry to site/vault/webpack.py like `'test': './js/vault/test.js'`
+- use the alias we defined above when inserting it into a template
+
+```html
+<!-- add to existing js block or create new one like this: -->
+{% block javascript %}
+    {{ super() }}
+    {{ webpack['test.js'] }}
+{% endblock %}
+```
+
+Then rebuild the JS assets & restart the app: `invenio-cli assets build && invenio-cli run`
