@@ -1,13 +1,16 @@
 # Running Invenio
 
+This document is about managing a running Invenio instance. See **Getting Started** in [develop.md](develop.md) for how to setup and start the app.
+
 ## Services
 
 | Service | URL | Notes |
 |---------|-----|-------|
 | RabbitMQ admin interface | http://localhost:15672 | credentials "guest/guest"
-| Elasticsearch | http://localhost:9200/rdmrecords/ |
-| pgAdmin (db) | http://127.0.0.1:5050/login | credentials "phette23@gmail.com/cca-vault" or look in docker-services.yml
-| API | https://127.0.0.1:5000/api |
+| Elasticsearch | http://localhost:9200/_cat/indices?v |
+| Postgres db | localhost:5432 | username, password, & db name are all "invenio-vault", run `./notes/code-samples/dbconnect`
+| pgAdmin (db) | http://127.0.0.1:5050/login | credentials "ephetteplace@cca.edu/invenio-vault" or look in docker-services.yml
+| API | https://127.0.0.1:5000/api/records | same port as app if running locally
 
 The Postgres database is another service but is not exposed, use pgAdmin to interact with it.
 
