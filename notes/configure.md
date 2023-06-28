@@ -4,9 +4,21 @@ https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/c
 
 See invenio.cfg which has numerous comments.
 
+## General Notes
+
+When a setting changes, such as something defined in invenio.cfg, you can simply reload the app (stop and then `invenio-cli run` again) to see the change. But some settings are like pseudo-fixtures that are using only during initialization (the RDM passwords field, custom fields?).
+
+If a fixture in app_data changes, then the whole app needs to be rebuilt. Run `./notes/code-samples/rebuild`. This deletes the database and search indices.
+
+## Vocabularies
+
+TBD
+
+https://inveniordm.docs.cern.ch/customize/vocabularies/
+
 ## Security, Users
 
-Users are created by app_data/[users.yaml](https://inveniordm.docs.cern.ch/customize/vocabularies/users/). The default admin is admin@inveniosoftware.org with a password defined in invenio.cfg by `RDM_RECORDS_USER_FIXTURE_PASSWORDS`. Passwords in the setting override passwords in users.yaml.
+Users are created by app_data/[users.yaml](https://inveniordm.docs.cern.ch/customize/vocabularies/users/). We create a default "vault@cca.edu" superadmin with password "password". Passwords can also be defined in invenio.cfg by `RDM_RECORDS_USER_FIXTURE_PASSWORDS`. Passwords in the setting override passwords in users.yaml.
 
 There are many invenio.cfg boolean settings we'll need to flip when we switch to SSO.
 

@@ -43,7 +43,6 @@ invenio access allow superuser-access role admin
 invenio index init
 # initialize custom fields
 invenio rdm-records custom-fields init
-# custom fields on communities
 invenio communities custom-fields init
 # app is semi-usable without errors now but uploads still won't work
 # until you load fixtures because they contains all the vocabs (resource types, subjects, etc.)
