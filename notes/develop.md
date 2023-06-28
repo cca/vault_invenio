@@ -70,3 +70,16 @@ To add custom JS to a template, you'll need to override the template, add a webp
 ```
 
 Then rebuild the JS assets & restart the app: `invenio-cli assets build && invenio-cli run`
+
+## Testing Invenio core modules
+
+See, for instance, [invenio-rdm-records](https://github.com/inveniosoftware/invenio-rdm-records) where it says how to install dependencies and run tests. These steps won't be enough, however, they don't include two necessary modules. It's also not clear to me why we're installing things one-by-one, doing as much typing as possible.
+
+```sh
+pipenv --python 3.9 # create the venv, 3.9 is latest version Invenio supports as of 6/2023
+pipenv shell
+pip install -e .[all]
+pip install invenio-search[opensearch2] invenio-db[postgresql] docker-services-cli check_manifest sphinx
+```
+
+Then to run tests, ensure Docker is running, and `./run-tests.sh`.
