@@ -14,6 +14,8 @@ invenio-cli services setup # sets up db, cache, search, task queue
 invenio-cli run # runs the application
 ```
 
+See our "notes" folder for further documentation.
+
 ## Overview
 
 Following is an overview of the generated files and folders:
