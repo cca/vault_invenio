@@ -12,11 +12,13 @@
 # - Frontend: Nginx (exposed ports: 40 and 443)
 # - UI application: UWSGI (not exposed)
 # - API application: UWSGI (not exposed)
+# - Worker
 # - Cache: Redis (exposed port: 6379)
 # - DB: (PostgresSQL/MySQL) (exposed port: 5432 or 3306)
 # - Message queue: RabbitMQ (exposed ports: 5672, 15672)
 # - Search platform: (OpenSearch/Elasticsearch) (exposed ports: 9200, 9300)
 # - OpenSearch Dashboard/Kibana (view OS/ES indexes) (exposed ports: 5601)
+# - Postgres Admin
 #
 version: '2.2'
 services:
