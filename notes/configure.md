@@ -39,6 +39,39 @@ To give an account admin permissions, run: `pipenv run invenio roles add <email>
 
 See the [SAML Integration](https://inveniordm.docs.cern.ch/customize/authentication/#saml-integration) documentation.
 
+## Storage
+
+Invenio works with Amazon S3. We use a Google Storage Bucket with some interoperability considerations.
+
+- Use appropriate Google Cloud project (e.g. staging versus prod)
+- Under Cloud Storage > Buckets, create a storage bucket with Standard storage class and no public access. Invenio runs requests for files through the application, so we can have private items.
+  - @TODO should we use Autoclass instead of Standard? Is it worth it? Pending research.
+  - @TODO Object protection measures. If we use, for instance, object versioning do we need fewer backups?
+- Under IAM > Service Accounts, create a service account with no project-level permissions and no user access, then go to the bucket you created > Permissions > Grant Access and enter the service account, give it Storage Object Admin role
+- Create a [HMAC key](https://cloud.google.com/storage/docs/authentication/hmackeys) for the service account, save the key and secret to Dashlane (**this is the only time the secret is shown**)
+- Add S3 storage configuration to invenio.cfg (see below)
+
+```ini
+# Invenio-Files-Rest
+# ==================
+FILES_REST_STORAGE_FACTORY='invenio_s3.s3fs_storage_factory'
+
+# Invenio-S3
+# ==========
+S3_ENDPOINT_URL=f'https://storage.googleapis.com/BUCKET_NAME'
+S3_ACCESS_KEY_ID='HMAC key'
+S3_SECRET_ACCESS_KEY='HMAC secret'
+
+# Allow S3 endpoint in the CSP rules
+APP_DEFAULT_SECURE_HEADERS['content_security_policy']['default-src'].append(
+    S3_ENDPOINT_URL
+)
+```
+
+The .invenio file also has `file_storage = S3` but that file might just be used when invenio-cli bootstraps a new instance.
+
+@TODO When choose S3 storage during `invenio-cli init` you get a Minio service too, we need to [follow the steps](https://inveniordm.docs.cern.ch/customize/s3/#set-your-minio-credentials) to change the admin account credentials and hook it up to GSB.
+
 ## Custom Fields
 
 Simplest: https://inveniordm.docs.cern.ch/customize/custom_fields/records/

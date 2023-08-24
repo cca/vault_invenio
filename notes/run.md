@@ -10,6 +10,7 @@ This document is about managing a running Invenio instance. See **Getting Starte
 | Elasticsearch | http://localhost:9200/_cat/indices?v |
 | Postgres db | localhost:5432 | username, password, & db name are all "invenio-vault", run `./notes/code-samples/dbconnect`
 | pgAdmin (db) | http://127.0.0.1:5050/login | credentials "ephetteplace@cca.edu/invenio-vault" or look in docker-services.yml
+| Minio | http://localhost:9001/browser | credentials "CHANGE_ME/CHANGE_ME"
 | API | https://127.0.0.1:5000/api/records | same port as app if running locally
 
 The Postgres database is another service but is not exposed, use pgAdmin to interact with it.
@@ -20,11 +21,11 @@ You may need to set the postgres host to "host.docker.internal" e.g. in docker/p
 
 If you're running the app locally the main URLs (for website and REST API) are localhost:5000 while if you run the fully containerized app then you do not need the port and the website, background worker, and API are all on different containers. Each of these three has the application code, but there are no static files for the worker & API.
 
-## Elasticsearch vs. OpenSearch
+## OpenSearch vs. Elasticsearch
 
-The project is transitioning from Elasticsearch (licensing concerns) to OpenSearch (AWS fork of ES). We may want to stick with ES anyways. @TODO confirm ES will be supported going forward
+The project is transitioning from Elasticsearch to OpenSearch (AWS fork of ES with more permissive licensing). ES will not be supported in a future version of InvenioRDM.
 
-The instructions on ES docker configuration are outdated, link to this ES which is more current https://www.elastic.co/guide/en/elasticsearch/reference/7.9/docker.html#docker-prod-prerequisites but `docker-machine` is deprecated and even after installing it I'm not able to successfully run `docker-machine ssh`
+I've been able to ignore the extra setup instructions on configuring Docker to work with ES, which were outdated and did not work anyways.
 
 ## Setup Troubles
 
