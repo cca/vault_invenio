@@ -36,7 +36,7 @@ OCFL is being worked on but right now there is only a tool to export Invenio fil
 
 #### File Integrity Check
 
-The v11 file integrity check report is wonderful, something obviously missing from EQUELLA. It took me some time to figure out what the `CELERY_BEAT_SCHEDULE` settings had to look like (see celery_beat.py in this dir):
+The v11 file integrity check report is wonderful, something obviously missing from EQUELLA. It took me some time to figure out what the `CELERY_BEAT_SCHEDULE` settings had to look like (see celery_beat.py in the code_samples dir):
 
 ```python
 from datetime import datetime
