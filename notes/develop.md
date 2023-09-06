@@ -8,14 +8,17 @@ See [Installation docs](https://inveniordm.docs.cern.ch/install/). We recommend 
 # to build fresh, answering configuration questions
 invenio-cli init rdm -c 11.0
 invenio-cli install
+invenio-cli services setup
 ```
 
 To start the app, ensure Docker is running, spin up the services, and `run` the app.
 
 ```sh
-invenio-cli services setup
+invenio-cli services start
 invenio-cli run
 ```
+
+If rebuilding a local instance, use `invenio-cli install` to recreate the virtualenv. A mere `pipenv install` won't copy over the configuration and static files to a location inside the venv and you'll end up with errors.
 
 The build process is slow the first time as docker images have to be downloaded during the process.
 

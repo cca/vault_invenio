@@ -39,13 +39,13 @@ OCFL is being worked on but right now there is only a tool to export Invenio fil
 The v11 file integrity check report is wonderful, something obviously missing from EQUELLA. It took me some time to figure out what the `CELERY_BEAT_SCHEDULE` settings had to look like (see celery_beat.py in the code_samples dir):
 
 ```python
-from datetime import datetime
+from datetime import timedelta
 from invenio_app_rdm.config import CELERY_BEAT_SCHEDULE
 CELERY_BEAT_SCHEDULE = {
     **CELERY_BEAT_SCHEDULE,
     'file-checks': {
         'task': 'invenio_files_rest.tasks.schedule_checksum_verification',
-        'schedule': datetime.timedelta(seconds=60),
+        'schedule': timedelta(seconds=60),
         'kwargs': {
             'batch_interval': {
                 'hours': 1
@@ -59,7 +59,7 @@ CELERY_BEAT_SCHEDULE = {
     },
     'file-integrity-report': {
         'task': 'invenio_app_rdm.tasks.file_integrity_report',
-        'schedule': datetime.timedelta(seconds=120)
+        'schedule': timedelta(seconds=120)
     }
 }
 ```
