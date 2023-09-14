@@ -18,7 +18,7 @@ invenio-cli services start
 invenio-cli run
 ```
 
-If rebuilding a local instance, use `invenio-cli install` to recreate the virtualenv. A mere `pipenv install` won't copy over the configuration and static files to a location inside the venv and you'll end up with errors.
+If rebuilding a local instance, use `invenio-cli install -d` to recreate the virtualenv. A mere `pipenv install` won't copy over the configuration and static files to a location inside the venv and you'll end up with errors.
 
 The build process is slow the first time as docker images have to be downloaded during the process.
 

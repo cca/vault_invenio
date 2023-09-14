@@ -21,6 +21,17 @@ You may need to set the postgres host to "host.docker.internal" e.g. in docker/p
 
 If you're running the app locally the main URLs (for website and REST API) are localhost:5000 while if you run the fully containerized app then you do not need the port and the website, background worker, and API are all on different containers. Each of these three has the application code, but there are no static files for the worker & API.
 
+## CLI Usage
+
+The `invenio` command has numerous commands for interacting with different parts of the app. **@TODO list common tasks here**
+
+We also install Graz U Library's [repository-cli](https://github.com/tu-graz-library/repository-cli/). It adds these extra commands:
+
+```sh
+invenio repository users list # list all users
+invenio repository records --help # many commands for manipulating records!
+```
+
 ## OpenSearch vs. Elasticsearch
 
 The project is transitioning from Elasticsearch to OpenSearch (AWS fork of ES with more permissive licensing). ES will not be supported in a future version of InvenioRDM.
