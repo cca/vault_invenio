@@ -8,9 +8,7 @@ theme = WebpackThemeBundle(
     default="semantic-ui",
     themes={
         "semantic-ui": dict(
-            entry={
-                'site-js-test': './js/vault/test.js'
-            },
+            entry={"vault-test": "./js/vault/test.js"},
         ),
     },
 )

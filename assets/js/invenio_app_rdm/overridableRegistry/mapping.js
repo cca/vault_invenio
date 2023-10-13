@@ -10,6 +10,7 @@ export const overriddenComponents = {
     "InvenioAppRdm.Deposit.VersionField.layout": () => null,
     "InvenioAppRdm.Deposit.PublisherField.layout": () => null,
     "InvenioAppRdm.Deposit.IdentifiersField.layout": () => null,
+    // ? do we want to retain this actually? Might be useful for Libraries records.
     "InvenioAppRdm.Deposit.RelatedWorksField.layout": () => null,
 }
 
