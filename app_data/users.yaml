@@ -8,9 +8,69 @@
   active: True
   # a null value for affiliations causes an error but that is also a user field
   confirmed: True
-  # @TODO this is obviously not production-safe ;)
+  # TODO this is obviously not production-safe ;)
   password: password
   roles:
     - admin
   allow:
     - superuser-access
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: ahaar@cca.edu
+  full_name: Annemarie Haar
+  username: ahaar
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: adrian@cca.edu
+  full_name: Adrian Applin
+  username: adrian
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: apadgett@cca.edu
+  full_name: Ali Padgett
+  username: apadgett
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: dransom@cca.edu
+  full_name: Daniel Ransom
+  username: dransom
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: ephetteplace@cca.edu
+  full_name: Eric Phetteplace
+  username: ephetteplace
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: erinm@cca.edu
+  full_name: Erin Murray
+  username: erinm
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: mingyuli@cca.edu
+  full_name: Mingyu Li
+  username: mingyuli
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: nchan@cca.edu
+  full_name: Nancy Chan
+  username: nchan
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: pnavarrete@cca.edu
+  full_name: Paul Navarrete
+  username: pnavarrete
+- active: true
+  affiliations: California College of the Arts
+  confirmed: true
+  email: tdowling@cca.edu
+  full_name: Teri Dowling
+  username: tdowling
