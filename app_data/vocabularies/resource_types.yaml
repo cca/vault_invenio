@@ -18,7 +18,7 @@
 # my assumption is datacite general/type are identical with openaire resourcetype/type
 # openaire resourcetype https://guidelines.openaire.eu/en/latest/data/field_resourcetype.html
 # based on CASRAI list above that I can't find
-# openaire type
+# openaire type seems to be a text version of resourceType ID
 
 # eurepo: https://wiki.surfnet.nl/display/standards/info-eu-repo/#infoeurepo-Publicationtypes
 

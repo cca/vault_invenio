@@ -10,11 +10,16 @@ When a setting changes, such as something defined in invenio.cfg, you can simply
 
 If a fixture in app_data changes, then the whole app needs to be rebuilt. Run `./notes/code-samples/rebuild`. This deletes the database and search indices.
 
-## Vocabularies
+## [Vocabularies](https://inveniordm.docs.cern.ch/customize/vocabularies/)
 
-TBD
+- AAT subjects
+- Custom CCA subjects? With academic programs included?
+- LCSH subset? Just terms we've used? Combine with above?
+- Temporarl (list of decades)
+- Names (from Libraries subject names taxo)
+- Users (from our integrations JSON)
 
-https://inveniordm.docs.cern.ch/customize/vocabularies/
+Should we combine several vocabs as one "CCA" subject? **Pros**: one single entry in subjects drop-down. **Cons**: odd mixture of terms serving different purposes.
 
 ## Security, Users
 

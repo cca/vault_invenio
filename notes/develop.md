@@ -18,13 +18,13 @@ invenio-cli services start
 invenio-cli run
 ```
 
-If rebuilding a local instance, use `invenio-cli install -d` to recreate the virtualenv. A mere `pipenv install` won't copy over the configuration and static files to a location inside the venv and you'll end up with errors.
+If rebuilding a local instance, use `invenio-cli install -d` to recreate the virtualenv. A mere `pipenv install` won't copy over the configuration and static files to a location inside the venv and the app breaks.
 
-The build process is slow the first time as docker images have to be downloaded during the process.
+The build process is slow the first time as docker images are downloaded.
 
-Invenio initializes fixtures (basically, the static app_data files) asynchronously by sending them to its task queue. So the initial startup, even after services are running, is further delayed as these tasks finish. View the task queue in the RabbitMQ dashboard and the size of the search indicies to get a sense of how much processing is left. See the **Services** table in [run.md](run.md). The **Setup Troubles**  section may also be useful.
+Invenio initializes fixtures (basically, the static app_data files) asynchronously by sending them to its task queue. So the initial startup, even after services are running, is further delayed as these tasks finish. View the task queue in the RabbitMQ dashboard and the size of the search indices to get a sense of how much processing is left. See the **Services** table in [run.md](run.md). The **Setup Troubles**  section may also be useful.
 
-Once running, visit https://127.0.0.1:5000 in a web browser. **Note**: The server is using a self-signed SSL certificate, so your browser will issue a warning that you will have to by-pass.
+Once running, visit https://127.0.0.1:5000 in a web browser. **Note**: The server is using a self-signed SSL certificate, so your browser will issue a warning that you have to by-pass.
 
 The super admin is vault@cca.edu with password "password", this comes from app_data/users.yaml. You may need to `invenio users activate vault@cca.edu` the admin account.
 

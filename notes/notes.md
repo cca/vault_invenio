@@ -12,9 +12,7 @@
 | Zenodo | not live yet? | https://github.com/zenodo/zenodo-rdm | bleeding edge v12, useful [cli commands](https://github.com/zenodo/zenodo-rdm/blob/master/site/zenodo_rdm/cli.py)
 | Northwestern Medicine | https://prism.northwestern.edu/ | no github repo?
 
-## Documentation
-
-https://inveniordm.docs.cern.ch/
+## [Documentation](https://inveniordm.docs.cern.ch/)
 
 The most important sections of the documentation are **[Customize](https://inveniordm.docs.cern.ch/customize/)** and **[Reference](https://inveniordm.docs.cern.ch/reference/)**. **[Develop](https://inveniordm.docs.cern.ch/develop/)** is less useful in general (unless we decide to write custom modules or contribute to the main project) but establishes some fundamental concepts and nuances, like how records and communities function.
 
