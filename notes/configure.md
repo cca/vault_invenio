@@ -21,6 +21,8 @@ If a fixture in app_data changes, then the whole app needs to be rebuilt. Run `.
 
 Should we combine several vocabs as one "CCA" subject? **Pros**: one single entry in subjects drop-down. **Cons**: odd mixture of terms serving different purposes.
 
+For [Names](https://inveniordm.docs.cern.ch/customize/vocabularies/names/), new ones can be added with `invenio vocabularies -v names -f ./app_data/vocabularies-future.yaml` where that yaml config references the names to be loaded in app_data/names.yaml. I haven't figured out how to load names without a real identifier (like ORCID).
+
 ## Security, Users
 
 Users are created by app_data/[users.yaml](https://inveniordm.docs.cern.ch/customize/vocabularies/users/). We create a default "vault@cca.edu" superadmin with password "password". Passwords can also be defined in invenio.cfg by `RDM_RECORDS_USER_FIXTURE_PASSWORDS`. Passwords in the setting override passwords in users.yaml.

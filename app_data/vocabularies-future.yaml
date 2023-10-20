@@ -1,0 +1,8 @@
+# https://inveniordm.docs.cern.ch/customize/vocabularies/names/
+names:
+  readers:
+    - type: yaml
+      args:
+        origin: "./app_data/names.yaml"
+  writers:
+    - type: names-service
