@@ -4,13 +4,15 @@ CCA InvenioRDM instance. This is mostly a cookiecutter Invenio project with addi
 
 ## Setup
 
-Requires Docker, python 3.9, pipenv, node, and npm 7. `invenio-cli check-requirements --development` will check if you have all these.
+Requires Docker, python 3.9, pipenv, node, and npm 7. `invenio-cli check-requirements --development` will check if you have all these. To install on an M2 Mac, it seems that additional packages are needed: `brew install cairo libffi pkg-config`.
+
+Finally, the invenio-saml module requires an outdated version of `xmlsec1` which you can't get from homebrew. Eric made a local tap with the requisite version. First, download install Xcode and open it to accept the license agreement. Then `brew tap phette23/local` and `brew install xmlsec1@1.2.37`.
 
 ```sh
-git clone https://github.com/cca/vault_invenio
-cd vault_invenio
-pipenv install # create virtualenv & install dependencies
-invenio-cli services setup # sets up db, cache, search, task queue
+git clone https://gitlab.com/california-college-of-the-arts/invenio && cd invenio
+pip install invenio-cli # install invenio-cli globally
+invenio-cli install --dev # creates the virtualenv, install dependencies, & some other setup
+invenio-cli services setup --no-demo-data # sets up db, cache, search, task queue
 invenio-cli run # runs the application
 ```
 
