@@ -1,0 +1,269 @@
+# Datacite roles
+- id: contactperson
+  props:
+    datacite: ContactPerson
+  title:
+    en: Contact person
+    de: Kontaktperson
+- id: datacollector
+  props:
+    datacite: DataCollector
+  title:
+    en: Data collector
+    de: DatensammlerIn
+- id: datacurator
+  props:
+    datacite: DataCurator
+  title:
+    en: Data curator
+    de: DatenkuratorIn
+- id: datamanager
+  props:
+    datacite: DataManager
+  title:
+    en: Data manager
+    de: DatenmanagerIn
+- id: distributor
+  props:
+    datacite: Distributor
+  title:
+    en: Distributor
+    de: VerteilerIn
+- id: editor
+  props:
+    datacite: Editor
+  title:
+    en: Editor
+    de: EditorIn
+- id: hostinginstitution
+  props:
+    datacite: HostingInstitution
+  title:
+    en: Hosting institution
+    de: Bereitstellende Institution
+- id: producer
+  props:
+    datacite: Producer
+  title:
+    en: Producer
+    de: ProduzentIn
+- id: projectleader
+  props:
+    datacite: ProjectLeader
+  title:
+    en: Project leader
+    de: ProjektleiterIn
+- id: projectmanager
+  props:
+    datacite: ProjectManager
+  title:
+    en: Project manager
+    de: ProjektmanagerIn
+- id: projectmember
+  props:
+    datacite: ProjectMember
+  title:
+    en: Project member
+    de: Projektmitglied
+- id: registrationagency
+  props:
+    datacite: RegistrationAgency
+  title:
+    en: Registration agency
+    de: Registrierungsstelle
+- id: registrationauthority
+  props:
+    datacite: RegistrationAuthority
+  title:
+    en: Registration authority
+    de: Registrierungsbehörde
+- id: relatedperson
+  props:
+    datacite: RelatedPerson
+  title:
+    en: Related person
+    de: Verwandte Person
+- id: researcher
+  props:
+    datacite: Researcher
+  title:
+    en: Researcher
+    de: WissenschaftlerIn
+- id: researchgroup
+  props:
+    datacite: ResearchGroup
+  title:
+    en: Research group
+    de: Forschungsgruppe
+- id: rightsholder
+  props:
+    datacite: RightsHolder
+  title:
+    en: Rights holder
+    de: RechteinhaberIn
+- id: sponsor
+  props:
+    datacite: Sponsor
+  title:
+    en: Sponsor
+    de: Sponsor
+- id: supervisor
+  props:
+    datacite: Supervisor
+  title:
+    en: Supervisor
+    de: SupervisorIn
+- id: workpackageleader
+  props:
+    datacite: WorkPackageLeader
+  title:
+    en: Work package leader
+    de: ArbeitspaketleiterIn
+- id: other
+  props:
+    datacite: Other
+  title:
+    en: Other
+    de: Andere
+# CCA roles from MARC relator  term
+- id: academicpartner
+  title:
+    en: Academic Partner
+- id: architect
+  title:
+    en: Architect
+- id: artist
+  title:
+    en: Artist
+- id: associatedname
+  title:
+    en: Associated Name
+- id: author
+  title:
+    en: Author
+- id: authorofintroduction,etc.
+  title:
+    en: Author Of Introduction, Etc.
+- id: bookdesigner
+  title:
+    en: Book Designer
+- id: bookjacketdesigner
+  title:
+    en: Bookjacket Designer
+- id: calligrapher
+  title:
+    en: Calligrapher
+- id: cinematographer
+  title:
+    en: Cinematographer
+- id: collaborator
+  title:
+    en: Collaborator
+- id: compiler
+  title:
+    en: Compiler
+- id: creator
+  title:
+    en: Creator
+- id: curator
+  title:
+    en: Curator
+- id: curatorassistant
+  title:
+    en: Curator Assistant
+- id: designer
+  title:
+    en: Designer
+- id: founder
+  title:
+    en: Founder
+- id: illustrator
+  title:
+    en: Illustrator
+- id: installationartist
+  title:
+    en: Installation Artist
+- id: instructorassistant
+  title:
+    en: Instructor Assistant
+- id: instructor/curator
+  title:
+    en: Instructor/Curator
+- id: interviewee
+  title:
+    en: Interviewee
+- id: interviewer
+  title:
+    en: Interviewer
+- id: manufacturer
+  title:
+    en: Manufacturer
+- id: minutetaker
+  title:
+    en: Minute Taker
+- id: narrator
+  title:
+    en: Narrator
+- id: organizer
+  title:
+    en: Organizer
+- id: organizerofmeeting
+  title:
+    en: Organizer Of Meeting
+- id: painter
+  title:
+    en: Painter
+- id: performanceartist
+  title:
+    en: Performance Artist
+- id: performer
+  title:
+    en: Performer
+- id: photographer
+  title:
+    en: Photographer
+- id: platemaker
+  title:
+    en: Platemaker
+- id: poet
+  title:
+    en: Poet
+- id: printer
+  title:
+    en: Printer
+- id: printmaker
+  title:
+    en: Printmaker
+- id: producer
+  title:
+    en: Producer
+- id: professor
+  title:
+    en: Professor
+- id: publisher
+  title:
+    en: Publisher
+- id: recordingengineer
+  title:
+    en: Recording Engineer
+- id: reviewer
+  title:
+    en: Reviewer
+- id: sculptor
+  title:
+    en: Sculptor
+- id: singersongwriter
+  title:
+    en: Singer Songwriter
+- id: speaker
+  title:
+    en: Speaker
+- id: teacher
+  title:
+    en: Teacher
+- id: transcriber
+  title:
+    en: Transcriber
+- id: writer
+  title:
+    en: Writer
