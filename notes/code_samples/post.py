@@ -5,13 +5,11 @@ See Invenio's example:
 https://github.com/inveniosoftware/docs-invenio-rdm-restapi-example"""
 import json
 import os
-import sys
 import requests
+import urllib3
 
 # shut up urllib3 SSL verification warning
-requests.packages.urllib3.disable_warnings(
-    requests.packages.urllib3.exceptions.InsecureRequestWarning
-)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 token = os.environ.get("TOKEN", False) or os.environ.get("INVENIO_TOKEN", False)
 if not token:
