@@ -126,9 +126,6 @@
     en: Other
     de: Andere
 # CCA roles from MARC relator  term
-- id: academicpartner
-  title:
-    en: Academic Partner
 - id: architect
   title:
     en: Architect
@@ -137,40 +134,37 @@
     en: Artist
 - id: associatedname
   title:
-    en: Associated Name
+    en: Associated name
 - id: author
   title:
     en: Author
 - id: authorofintroduction,etc.
   title:
-    en: Author Of Introduction, Etc.
+    en: Author of introduction, etc.
 - id: bookdesigner
   title:
-    en: Book Designer
+    en: Book designer
 - id: bookjacketdesigner
   title:
-    en: Bookjacket Designer
+    en: Bookjacket designer
 - id: calligrapher
   title:
     en: Calligrapher
 - id: cinematographer
   title:
     en: Cinematographer
-- id: collaborator
-  title:
-    en: Collaborator
 - id: compiler
   title:
     en: Compiler
+- id: contributor
+  title:
+    en: Contributor
 - id: creator
   title:
     en: Creator
 - id: curator
   title:
     en: Curator
-- id: curatorassistant
-  title:
-    en: Curator Assistant
 - id: designer
   title:
     en: Designer
@@ -180,15 +174,6 @@
 - id: illustrator
   title:
     en: Illustrator
-- id: installationartist
-  title:
-    en: Installation Artist
-- id: instructorassistant
-  title:
-    en: Instructor Assistant
-- id: instructor/curator
-  title:
-    en: Instructor/Curator
 - id: interviewee
   title:
     en: Interviewee
@@ -200,22 +185,13 @@
     en: Manufacturer
 - id: minutetaker
   title:
-    en: Minute Taker
+    en: Minute taker
 - id: narrator
   title:
     en: Narrator
 - id: organizer
   title:
     en: Organizer
-- id: organizerofmeeting
-  title:
-    en: Organizer Of Meeting
-- id: painter
-  title:
-    en: Painter
-- id: performanceartist
-  title:
-    en: Performance Artist
 - id: performer
   title:
     en: Performer
@@ -225,9 +201,6 @@
 - id: platemaker
   title:
     en: Platemaker
-- id: poet
-  title:
-    en: Poet
 - id: printer
   title:
     en: Printer
@@ -237,24 +210,18 @@
 - id: producer
   title:
     en: Producer
-- id: professor
-  title:
-    en: Professor
 - id: publisher
   title:
     en: Publisher
 - id: recordingengineer
   title:
-    en: Recording Engineer
+    en: Recording engineer
 - id: reviewer
   title:
     en: Reviewer
 - id: sculptor
   title:
     en: Sculptor
-- id: singersongwriter
-  title:
-    en: Singer Songwriter
 - id: speaker
   title:
     en: Speaker
@@ -264,6 +231,3 @@
 - id: transcriber
   title:
     en: Transcriber
-- id: writer
-  title:
-    en: Writer
