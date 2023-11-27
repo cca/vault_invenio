@@ -28,7 +28,7 @@ subjects:
       name: Art & Architecture Thesaurus
       uri: https://www.getty.edu/research/tools/vocabularies/aat/
       data-file: vocabularies/aat.yaml
-# TODO: Uncoment this if you want to have all affiliations with ROR identifiers.
+# TODO: we want at least a CCA affiliation org https://ror.org/01mmcf932
 # affiliations:
 #   pid-type: aff
 #   schemes:
