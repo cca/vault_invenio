@@ -28,14 +28,14 @@ subjects:
       name: Art & Architecture Thesaurus
       uri: https://www.getty.edu/research/tools/vocabularies/aat/
       data-file: vocabularies/aat.yaml
-# TODO: we want at least a CCA affiliation org https://ror.org/01mmcf932
-# affiliations:
-#   pid-type: aff
-#   schemes:
-#     - id: ROR
-#       name: Research Organization Registry
-#       uri: "https://ror.org/"
-#       data-file: vocabularies/affiliations_ror.yaml
+# only contains CCA right now
+affiliations:
+  pid-type: aff
+  schemes:
+    - id: ROR
+      name: Research Organization Registry
+      uri: "https://ror.org/"
+      data-file: vocabularies/affiliations.yaml
 programs:
   pid-type: sub
   data-file: vocabularies/programs.yaml

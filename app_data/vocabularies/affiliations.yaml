@@ -1,0 +1,10 @@
+# Full file: https://raw.githubusercontent.com/inveniosoftware/cookiecutter-invenio-rdm/master/%7B%7Bcookiecutter.project_shortname%7D%7D/app_data/vocabularies/affiliations_ror.yaml
+# CCA affiliation org https://ror.org/01mmcf932
+- acronym: CCA
+  id: 01mmcf932
+  identifiers:
+    - identifier: 01mmcf932
+      scheme: ror
+  name: California College of the Arts
+  title:
+    en: California College of the Arts
