@@ -56,7 +56,23 @@
     type: publication
   title:
     en: Journal article
-    de: Zeitschriftenartikel
+  tags:
+    - depositable
+    - linkable
+- id: publication-book
+  icon: file alternate
+  props:
+    csl: book
+    datacite_general: Book
+    datacite_type: ""
+    openaire_resourceType: "0002"
+    openaire_type: publication
+    eurepo: info:eu-repo/semantics/book
+    schema.org: https://schema.org/Book
+    subtype: publication-book
+    type: publication
+  title:
+    en: Book
   tags:
     - depositable
     - linkable
@@ -76,7 +92,7 @@
     type: thesis
   title:
     en: Thesis
-    de: Abschlussarbeit
+  # ? remove tags prop, hopefully this mean it's not an option on upload form?
 - id: bachelors-thesis
   icon: file alternate
   props:
@@ -126,7 +142,6 @@
     type: image
   title:
     en: Image
-    de: Bild
   tags:
     - depositable
     - linkable
@@ -145,7 +160,6 @@
     type: video
   title:
     en: Video/Audio
-    de: Video/Audio
   tags:
     - depositable
     - linkable
@@ -164,7 +178,6 @@
     type: event
   title:
     en: Event
-    de: Veranstaltung
   tags:
     - depositable
     - linkable
@@ -184,7 +197,6 @@
     type: other
   title:
     en: Other
-    de: Sonstige
   tags:
     - depositable
     - linkable
